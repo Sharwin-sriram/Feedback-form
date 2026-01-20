@@ -1,0 +1,77 @@
+.NewFeedback {
+  font-family: "Inter";
+  width: 100%;
+  height: 100dvh;
+  left: 0;
+  top: 0;
+  z-index: 99999;
+  color: white;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  h4 {
+    font-size: 1.4em;
+    font-weight: 500;
+  }
+}
+
+.closeBtn {
+  position: fixed;
+  top: 1em;
+  right: 1em;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.NewFeedback > form {
+  gap: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  button {
+    cursor: pointer;
+    border: none;
+    background: none;
+    margin-bottom: 10px;
+    color: white;
+  }
+}
+
+.NewFeedback > form > input,
+.NewFeedback > form > textarea {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  padding: 1em;
+  resize: none;
+  border-radius: 7px;
+  border: none;
+  color: white;
+  width: 17em;
+  caret-color: white;
+  &::placeholder {
+    color: white;
+  }
+}
+
+.NewFeedback > form > input:focus ,
+.NewFeedback > form > textarea:focus {
+  outline: none;
+}
+
+.NewFeedback > form > textarea {
+  font-family: "Inter";
+  height: 7em;
+}
+
+.Danger {
+  outline: 1px solid red;
+}
+
+.error {
+  color: red;
+}

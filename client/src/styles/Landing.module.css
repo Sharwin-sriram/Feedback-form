@@ -1,0 +1,111 @@
+.landing {
+  padding-top: 5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.Wrapper {
+  font-family: "Inter";
+  position: relative;
+  border: 1px solid var(--primary);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.feedbackWrapper {
+  font-family: "Inter";
+  font-style: italic;
+}
+
+.feedback {
+  user-select: none;
+  /* border: 1px solid #ffffff; */
+  transition: all 0.3s ease;
+  width: 100%;
+  /* gap: 10px; */
+  font-size: 1.1em;
+  display: flex;
+  min-width: 15em;
+  position: relative;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 1em;
+  /* width: 6em; */
+  /* height: 6em; */
+  border-radius: 6px;
+}
+
+.feedbackContent {
+  overflow: hidden;
+  max-height: 0;
+  display: flex;
+  align-self: flex-start;
+  opacity: 0;
+  max-width: 20em;
+  transform: translateY(-6px);
+  transition:
+    max-height 0.35s ease,
+    opacity 0.25s ease,
+    transform 0.25s ease;
+  span {
+    color: var(--primary);
+  }
+}
+
+.Open {
+  max-height: max-content;
+  opacity: 1;
+  margin-top: 10px;
+  position: static;
+  transform: translateY(0);
+}
+
+.delete {
+  right: 7px;
+  bottom: 2px;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s ease;
+  cursor: pointer;
+  position: absolute;
+}
+
+.delete:hover {
+  color: red;
+}
+
+.delete.DeleteBtnOn {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.name > span {
+  color: var(--accent);
+}
+
+button {
+  background: none;
+  position: relative;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.downArrow {
+  position: absolute;
+  right: 10px;
+  top: 1em;
+}
+
+.feedbackWrapper {
+  padding: 2em;
+  gap: 10px;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+}
