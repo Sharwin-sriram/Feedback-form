@@ -1,7 +1,6 @@
 import Login from "../models/Login.js";
 import bcrypt from "bcrypt";
 import { serverError } from "../Errors/serverError.js";
-import jwt from "jsonwebtoken";
 
 export async function login(req, res) {
   try {
@@ -14,15 +13,6 @@ export async function login(req, res) {
     if (!user) return res.status(401).json({ message: "Invalid Username" });
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) return res.status(401).json({ message: "Invalid Password" });
-
-    const token = jwt.sign(
-      {
-        id: user._id,
-        email: user.email,
-      },
-      process.env.JWT_SECRET,
-      { expiresIn: "1d" },
-    );
 
     res.status(200).json({
       message: "Login Successful",
@@ -116,5 +106,14 @@ export async function signUp(req, res) {
   } catch (err) {
     console.error("Error in signUp controller:", err);
     serverError(req, res);
+  }
+}
+
+export async function getUSers(req, res) {
+  try {
+    const users = await Login.find();
+    res.status(200).json(users);
+  } catch (er) {
+    console.log(er);
   }
 }
